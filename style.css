@@ -104,10 +104,11 @@ body {
   100% { opacity: 1; }
 }
 
-/* Navigation Links */
+
 .navbar {
   display: flex;
-  justify-content: flex-end; /* Align links to the right */
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  justify-content: center; /* Center align on smaller screens */
   background-color: #333; /* Dark background for the navbar */
   padding: 10px 20px;
 }
@@ -125,6 +126,7 @@ body {
   border-radius: 20px; /* Make individual links slightly rounded */
   margin-left: 15px; /* Space between the links */
 }
+
 
 .navbar a:hover {
   color: #00bfff; /* Light blue on hover */
@@ -150,10 +152,11 @@ body {
 /* About Section */
 .about-section {
   display: flex;
+  flex-direction: column; /* Stack content vertically for smaller screens */
   justify-content: center;
   align-items: center;
   gap: 30px;
-  padding: 60px 20px;
+  padding: 30px 15px;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 50, 0.9)), url("https://i.ibb.co/0ytF6hb/pngtree-technology-wind-conference-invited-background-banner-and-technologyposter-backgroundgeneral.jpg");
   background-size: cover;
   background-position: center;
@@ -262,6 +265,8 @@ body {
 
 /* About Image Section */
 .about-image {
+  width: 100%; /* Adjust image width for responsiveness */
+  max-width: 300px; /* Ensure it doesn't get too large */
   flex: 1;
   text-align: center;
   animation: fadeInRotate 2s ease-out forwards; /* Fade-in with rotation effect */
@@ -384,7 +389,7 @@ body {
 .registration-container {
   position: relative;
   z-index: 2; /* Ensure content appears above the overlay */
-  max-width: 600px;
+  max-width: 100%; /* Allow full width for smaller screens */
   margin: 0 auto;
   animation: slideUp 2s ease-in-out, glowText 1.5s ease-in-out infinite; /* Added text glow */
 }
@@ -406,6 +411,34 @@ body {
   }
   50% {
     text-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px #ffcc00;
+  }
+}
+
+/* Media Query for Phones */
+@media (max-width: 576px) {
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  .about-description {
+    font-size: 0.9rem;
+  }
+
+  .registration-title {
+    font-size: 1.5rem;
+  }
+
+  .registration-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .navbar a {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .styled-form {
+    padding: 10px;
   }
 }
 
