@@ -717,7 +717,7 @@ body {
 .team-members {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping, but in a horizontal flow */
-  justify-content: space-between; /* Ensure that the items are spaced out evenly */
+  justify-content: space-around; /* Ensure that the items are spaced out evenly */
   gap: 30px; /* Add space between the cards */
   padding: 20px 0; /* Optional padding to keep space around */
 }
@@ -772,40 +772,10 @@ body {
   line-height: 1.5;
 }
 
-/* Additional adjustments for the images */
-.team-member {
-  display: flex;
-  justify-content: center; /* Center-align each card within its container */
-  align-items: center;
-  margin-bottom: 20px; /* Add some space at the bottom of each card */
-}
-
-.team-card {
-  width: 300px; /* Slightly larger width for better spacing */
-}
-
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
-  .team-members {
-    justify-content: center;
-  }
-
-  .team-card {
-    width: 250px; /* Adjust width on smaller screens */
-  }
-
-  .team-info h3 {
-    font-size: 1.3rem; /* Reduce size of the name */
-  }
-}
-
-@media (max-width: 900px) {
   .team-title {
     font-size: 2.5rem; /* Smaller title on smaller screens */
-  }
-
-  .team-subtitle {
-    font-size: 1.2rem; /* Smaller subtitle */
   }
 
   .team-category {
@@ -816,18 +786,44 @@ body {
     width: 230px; /* Narrower cards */
   }
 
+  .team-info h3 {
+    font-size: 1.3rem; /* Smaller font for names */
+  }
+
   .team-members {
-    gap: 20px; /* Adjust gap between cards */
+    justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .team-title {
+    font-size: 2rem; /* Title size for tablet */
+  }
+
+  .team-subtitle {
+    font-size: 1.2rem; /* Smaller subtitle */
+  }
+
+  .team-category {
+    font-size: 1.5rem; /* Smaller category font */
+  }
+
+  .team-card {
+    width: 220px; /* Adjust card size */
+  }
+
+  .team-members {
+    gap: 15px; /* Decreased space between cards */
   }
 }
 
 @media (max-width: 600px) {
   .team-section {
-    padding: 80px 10px; /* Less padding on mobile */
+    padding: 50px 15px; /* Adjust padding on small screens */
   }
 
   .team-title {
-    font-size: 2rem; /* Even smaller title */
+    font-size: 1.8rem; /* Smaller title */
   }
 
   .team-subtitle {
@@ -835,11 +831,11 @@ body {
   }
 
   .team-category {
-    font-size: 1.4rem; /* Adjust category font size */
+    font-size: 1.3rem; /* Adjust category size */
   }
 
   .team-card {
-    width: 200px; /* Even narrower cards */
+    width: 180px; /* Narrower cards */
   }
 
   .team-info h3 {
@@ -847,9 +843,50 @@ body {
   }
 
   .team-info p {
-    font-size: 1rem; /* Slightly smaller description text */
+    font-size: 0.9rem; /* Smaller description font */
+  }
+
+  .team-members {
+    justify-content: center; /* Center-align cards */
+    gap: 10px; /* Further reduced gap */
   }
 }
+
+@media (max-width: 480px) {
+  .team-section {
+    padding: 40px 10px; /* Padding for very small screens */
+  }
+
+  .team-title {
+    font-size: 1.6rem; /* Title even smaller for phones */
+  }
+
+  .team-subtitle {
+    font-size: 0.9rem; /* Smaller subtitle */
+  }
+
+  .team-category {
+    font-size: 1.2rem; /* Smaller category size */
+  }
+
+  .team-card {
+    width: 160px; /* Card width on mobile */
+  }
+
+  .team-info h3 {
+    font-size: 1.1rem; /* Smaller name on mobile */
+  }
+
+  .team-info p {
+    font-size: 0.9rem; /* Smaller description on mobile */
+  }
+
+  .team-members {
+    justify-content: center;
+    gap: 8px; /* Even smaller gap */
+  }
+}
+
 
 
 /* Footer Section Styles */
