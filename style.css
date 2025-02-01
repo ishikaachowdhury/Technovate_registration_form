@@ -619,6 +619,40 @@ body {
   }
 }
 
+.section-overlay {
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
+  padding: 60px 20px; /* Increased padding for more space around content */
+  border-radius: 20px; /* Soft rounded corners */
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Stronger shadow for depth */
+  backdrop-filter: blur(8px); /* Soft blur effect for a more luxurious feel */
+}
+
+.team-title {
+  font-size: 3rem; /* Larger font size */
+  text-align: center;
+  margin-bottom: 30px; /* Increased space below the title */
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  color: #ffcc00;
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7); /* Glowing text shadow */
+  letter-spacing: 2px; /* Added letter-spacing for elegance */
+  animation: glow 1.5s infinite alternate; /* Glowing animation */
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7);
+  }
+  50% {
+    text-shadow: 0 6px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.9);
+  }
+  100% {
+    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7);
+  }
+}
+
 /* Team Section Styles */
 .team-section {
   background: url("https://i.ibb.co/0ytF6hb/pngtree-technology-wind-conference-invited-background-banner-and-technologyposter-backgroundgeneral.jpg") no-repeat center center;
@@ -682,16 +716,10 @@ body {
 
 .team-members {
   display: flex;
-  flex-direction: column;
-  gap: 50px; /* Increased gap for spacious feel */
-  align-items: center;
-}
-
-.team-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px; /* Larger gap between cards */
+  flex-wrap: wrap; /* Allow wrapping, but in a horizontal flow */
+  justify-content: space-between; /* Ensure that the items are spaced out evenly */
+  gap: 30px; /* Add space between the cards */
+  padding: 20px 0; /* Optional padding to keep space around */
 }
 
 .team-card {
@@ -701,7 +729,7 @@ body {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   text-align: center;
-  width: 280px; /* Increased width for larger cards */
+  width: 280px; /* Fixed width for cards */
 }
 
 .team-card:hover {
@@ -743,27 +771,85 @@ body {
   margin-top: 8px;
   line-height: 1.5;
 }
+
+/* Additional adjustments for the images */
+.team-member {
+  display: flex;
+  justify-content: center; /* Center-align each card within its container */
+  align-items: center;
+  margin-bottom: 20px; /* Add some space at the bottom of each card */
+}
+
 .team-card {
-  position: relative;
-  overflow: hidden;
-  transform: scale(1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px; /* Slightly larger width for better spacing */
 }
 
-.team-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(255, 204, 0, 0.6);
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .team-members {
+    justify-content: center;
+  }
+
+  .team-card {
+    width: 250px; /* Adjust width on smaller screens */
+  }
+
+  .team-info h3 {
+    font-size: 1.3rem; /* Reduce size of the name */
+  }
 }
 
-.team-card img {
-  transition: transform 0.3s ease;
+@media (max-width: 900px) {
+  .team-title {
+    font-size: 2.5rem; /* Smaller title on smaller screens */
+  }
+
+  .team-subtitle {
+    font-size: 1.2rem; /* Smaller subtitle */
+  }
+
+  .team-category {
+    font-size: 1.7rem; /* Smaller category font */
+  }
+
+  .team-card {
+    width: 230px; /* Narrower cards */
+  }
+
+  .team-members {
+    gap: 20px; /* Adjust gap between cards */
+  }
 }
 
-.team-card:hover img {
-  transform: scale(1.1);
+@media (max-width: 600px) {
+  .team-section {
+    padding: 80px 10px; /* Less padding on mobile */
+  }
+
+  .team-title {
+    font-size: 2rem; /* Even smaller title */
+  }
+
+  .team-subtitle {
+    font-size: 1rem; /* Smaller subtitle */
+  }
+
+  .team-category {
+    font-size: 1.4rem; /* Adjust category font size */
+  }
+
+  .team-card {
+    width: 200px; /* Even narrower cards */
+  }
+
+  .team-info h3 {
+    font-size: 1.2rem; /* Smaller name size */
+  }
+
+  .team-info p {
+    font-size: 1rem; /* Slightly smaller description text */
+  }
 }
-
-
 
 
 /* Footer Section Styles */
