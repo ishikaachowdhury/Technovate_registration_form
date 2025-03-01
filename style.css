@@ -657,31 +657,31 @@ body {
 .team-section {
   background: url("https://i.ibb.co/0ytF6hb/pngtree-technology-wind-conference-invited-background-banner-and-technologyposter-backgroundgeneral.jpg") no-repeat center center;
   background-size: cover;
-  padding: 100px 20px; /* Increased padding for a more open feel */
+  padding: 100px 20px;
   color: #fff;
   position: relative;
 }
 
 .team-section .section-overlay {
-  background: rgba(0, 0, 0, 0.6); /* Dark overlay for contrast */
-  padding: 60px 20px; /* Increased padding for more space around content */
-  border-radius: 20px; /* Soft rounded corners */
+  background: rgba(0, 0, 0, 0.6);
+  padding: 60px 20px;
+  border-radius: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Stronger shadow for depth */
-  backdrop-filter: blur(8px); /* Soft blur effect for a more luxurious feel */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
 }
 
 .team-title {
-  font-size: 3rem; /* Larger font size */
+  font-size: 3rem;
   text-align: center;
-  margin-bottom: 30px; /* Increased space below the title */
+  margin-bottom: 30px;
   font-family: 'Poppins', sans-serif;
   text-transform: uppercase;
   color: #ffcc00;
-  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7); /* Glowing text shadow */
-  letter-spacing: 2px; /* Added letter-spacing for elegance */
-  animation: glow 1.5s infinite alternate; /* Glowing animation */
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7);
+  letter-spacing: 2px;
+  animation: glow 1.5s infinite alternate;
 }
 
 @keyframes glow {
@@ -698,30 +698,30 @@ body {
 
 .team-subtitle {
   text-align: center;
-  font-size: 1.4rem; /* Slightly larger subtitle */
-  margin-bottom: 50px; /* Increased space below the subtitle */
+  font-size: 1.4rem;
+  margin-bottom: 50px;
   color: #ddd;
   line-height: 1.6;
 }
 
 .team-category {
   text-align: center;
-  font-size: 2rem; /* Increased category font size */
-  margin: 40px 0 50px; /* Adjusted margin for better spacing */
+  font-size: 2rem;
+  margin: 40px 0 50px;
   color: #ffcc00;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 204, 0, 0.8); /* Glowing text shadow */
-  letter-spacing: 1px; /* Subtle letter-spacing for a refined look */
-  animation: glow 1.5s infinite alternate; /* Glowing animation */
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 204, 0, 0.8);
+  letter-spacing: 1px;
+  animation: glow 1.5s infinite alternate;
 }
 
 .team-members {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping, but in a horizontal flow */
-  justify-content: space-around; /* Ensure that the items are spaced out evenly */
-  gap: 30px; /* Add space between the cards */
-  padding: 20px 0; /* Optional padding to keep space around */
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 0;
 }
-/* Team Card Styles with Glowing Effects */
+
 .team-card {
   position: relative;
   background: rgba(255, 255, 255, 0.1);
@@ -731,7 +731,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   text-align: center;
   width: 280px;
-  border: 2px solid rgba(255, 204, 0, 0.5); /* Soft glow border */
+  border: 2px solid rgba(255, 204, 0, 0.5);
 }
 
 .team-card::before {
@@ -747,19 +747,18 @@ body {
   transition: opacity 0.3s ease-in-out;
 }
 
-.team-card:hover {
+.team-card:hover, .team-card:active {
   transform: scale(1.07);
-  box-shadow: 0 0 20px rgba(255, 204, 0, 0.8), 0 0 40px rgba(255, 204, 0, 0.5); /* Glowing effect */
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.8), 0 0 40px rgba(255, 204, 0, 0.5);
   filter: brightness(1.2);
   background: rgba(255, 255, 255, 0.15);
   border: 2px solid rgba(255, 204, 0, 0.8);
 }
 
-.team-card:hover::before {
+.team-card:hover::before, .team-card:active::before {
   opacity: 1;
 }
 
-/* Image Styling (Maintains Size) */
 .team-card img {
   width: 100%;
   height: 250px;
@@ -768,23 +767,19 @@ body {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-/* Image Glow Effect (Without Distorting Size) */
-.team-card:hover img {
+.team-card:hover img, .team-card:active img {
   box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
 }
 
-/* Team Info Section */
 .team-info {
   padding: 20px;
   transition: background-color 0.3s ease;
 }
 
-/* Hover Effect on Info Section */
-.team-card:hover .team-info {
+.team-card:hover .team-info, .team-card:active .team-info {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Glowing Name Effect */
 .team-info h3 {
   font-size: 1.5rem;
   color: #ffcc00;
@@ -795,44 +790,25 @@ body {
   animation: glow 1.5s infinite alternate;
 }
 
-/* Glowing Animation */
-@keyframes glow {
-  0% {
-    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7);
-  }
-  50% {
-    text-shadow: 0 6px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.9);
-  }
-  100% {
-    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7);
-  }
-}
-
-/* Description Text */
 .team-info p {
   font-size: 1.1rem;
   color: #ddd;
   margin-top: 8px;
   line-height: 1.5;
 }
-/* Ensure the glow effect works on mobile */
+
 @media (max-width: 768px) {
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .team-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-  }
-
-  .team-card:active, .team-card:hover {
-    transform: scale(1.07);
-    box-shadow: 0 0 20px rgba(255, 204, 0, 0.8), 0 0 40px rgba(255, 204, 0, 0.5);
-    filter: brightness(1.2);
-    background: rgba(255, 255, 255, 0.15);
-    border: 2px solid rgba(255, 204, 0, 0.8);
-  }
-
-  .team-card:active::before, .team-card:hover::before {
-    opacity: 1;
+    width: 90%;
+    max-width: 300px;
   }
 }
+
 
 
 /* Footer Section Styles */
