@@ -721,170 +721,99 @@ body {
   gap: 30px; /* Add space between the cards */
   padding: 20px 0; /* Optional padding to keep space around */
 }
-
+/* Team Card Styles with Glowing Effects */
 .team-card {
+  position: relative;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px; /* Larger border-radius for a softer look */
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
   text-align: center;
-  width: 280px; /* Fixed width for cards */
+  width: 280px;
+  border: 2px solid rgba(255, 204, 0, 0.5); /* Soft glow border */
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .team-card:hover {
-  transform: scale(1.07); /* Slightly increased hover scale */
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7); /* Stronger shadow on hover */
-  filter: brightness(1.1); /* Increased brightness effect */
-  background: rgba(255, 255, 255, 0.15); /* Slight background change */
+  transform: scale(1.07);
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.8), 0 0 40px rgba(255, 204, 0, 0.5); /* Glowing effect */
+  filter: brightness(1.2);
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 204, 0, 0.8);
 }
 
+.team-card:hover::before {
+  opacity: 1;
+}
+
+/* Image Styling (Maintains Size) */
 .team-card img {
   width: 100%;
-  height: 250px; /* Larger image size */
+  height: 250px;
   object-fit: cover;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.2); /* Thicker image border */
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease-in-out;
 }
 
+/* Image Glow Effect (Without Distorting Size) */
+.team-card:hover img {
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+}
+
+/* Team Info Section */
 .team-info {
-  padding: 20px; /* Increased padding for a more comfortable layout */
-  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+  padding: 20px;
+  transition: background-color 0.3s ease;
 }
 
+/* Hover Effect on Info Section */
 .team-card:hover .team-info {
-  background-color: rgba(255, 255, 255, 0.15); /* Subtle background change on hover */
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
+/* Glowing Name Effect */
 .team-info h3 {
-  font-size: 1.5rem; /* Increased font size for team member names */
+  font-size: 1.5rem;
   color: #ffcc00;
   margin-bottom: 10px;
   text-transform: capitalize;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 204, 0, 0.8); /* Glowing effect on names */
-  letter-spacing: 1px; /* Added letter-spacing for elegance */
-  animation: glow 1.5s infinite alternate; /* Glowing animation */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(255, 204, 0, 0.8);
+  letter-spacing: 1px;
+  animation: glow 1.5s infinite alternate;
 }
 
+/* Glowing Animation */
+@keyframes glow {
+  0% {
+    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7);
+  }
+  50% {
+    text-shadow: 0 6px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 204, 0, 0.9);
+  }
+  100% {
+    text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7);
+  }
+}
+
+/* Description Text */
 .team-info p {
-  font-size: 1.1rem; /* Slightly larger font for descriptions */
+  font-size: 1.1rem;
   color: #ddd;
   margin-top: 8px;
   line-height: 1.5;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
-  .team-title {
-    font-size: 2.5rem; /* Smaller title on smaller screens */
-  }
-
-  .team-category {
-    font-size: 1.7rem; /* Smaller category font */
-  }
-
-  .team-card {
-    width: 230px; /* Narrower cards */
-  }
-
-  .team-info h3 {
-    font-size: 1.3rem; /* Smaller font for names */
-  }
-
-  .team-members {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 900px) {
-  .team-title {
-    font-size: 2rem; /* Title size for tablet */
-  }
-
-  .team-subtitle {
-    font-size: 1.2rem; /* Smaller subtitle */
-  }
-
-  .team-category {
-    font-size: 1.5rem; /* Smaller category font */
-  }
-
-  .team-card {
-    width: 220px; /* Adjust card size */
-  }
-
-  .team-members {
-    gap: 15px; /* Decreased space between cards */
-  }
-}
-
-@media (max-width: 600px) {
-  .team-section {
-    padding: 50px 15px; /* Adjust padding on small screens */
-  }
-
-  .team-title {
-    font-size: 1.8rem; /* Smaller title */
-  }
-
-  .team-subtitle {
-    font-size: 1rem; /* Smaller subtitle */
-  }
-
-  .team-category {
-    font-size: 1.3rem; /* Adjust category size */
-  }
-
-  .team-card {
-    width: 180px; /* Narrower cards */
-  }
-
-  .team-info h3 {
-    font-size: 1.2rem; /* Smaller name size */
-  }
-
-  .team-info p {
-    font-size: 0.9rem; /* Smaller description font */
-  }
-
-  .team-members {
-    justify-content: center; /* Center-align cards */
-    gap: 10px; /* Further reduced gap */
-  }
-}
-
-@media (max-width: 480px) {
-  .team-section {
-    padding: 40px 10px; /* Padding for very small screens */
-  }
-
-  .team-title {
-    font-size: 1.6rem; /* Title even smaller for phones */
-  }
-
-  .team-subtitle {
-    font-size: 0.9rem; /* Smaller subtitle */
-  }
-
-  .team-category {
-    font-size: 1.2rem; /* Smaller category size */
-  }
-
-  .team-card {
-    width: 160px; /* Card width on mobile */
-  }
-
-  .team-info h3 {
-    font-size: 1.1rem; /* Smaller name on mobile */
-  }
-
-  .team-info p {
-    font-size: 0.9rem; /* Smaller description on mobile */
-  }
-
-  .team-members {
-    justify-content: center;
-    gap: 8px; /* Even smaller gap */
-  }
 }
 
 
