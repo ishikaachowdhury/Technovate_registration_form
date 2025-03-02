@@ -652,7 +652,6 @@ body {
     text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7);
   }
 }
-
 /* Team Section Styles */
 .team-section {
   background: url("https://i.ibb.co/0ytF6hb/pngtree-technology-wind-conference-invited-background-banner-and-technologyposter-backgroundgeneral.jpg") no-repeat center center;
@@ -682,6 +681,7 @@ body {
   text-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.7);
   letter-spacing: 2px;
   animation: glow 1.5s infinite alternate;
+  will-change: text-shadow;
 }
 
 @keyframes glow {
@@ -732,6 +732,7 @@ body {
   text-align: center;
   width: 280px;
   border: 2px solid rgba(255, 204, 0, 0.5);
+  will-change: transform, filter;
 }
 
 .team-card::before {
@@ -761,7 +762,8 @@ body {
 
 .team-card img {
   width: 100%;
-  height: 250px;
+  height: auto; 
+  max-height: 250px;
   object-fit: cover;
   border-bottom: 3px solid rgba(255, 255, 255, 0.2);
   transition: box-shadow 0.3s ease-in-out;
@@ -806,9 +808,36 @@ body {
   .team-card {
     width: 90%;
     max-width: 300px;
+    transition: none;
+  }
+
+  .team-card img {
+    height: 200px; /* Adjust for better aspect ratio */
+  }
+
+  .team-card:hover, .team-card:active {
+    transform: none;
+    box-shadow: none;
+    filter: none;
+  }
+
+  .team-title {
+    font-size: 2.5rem;
+    animation: glow-mobile 2s infinite alternate;
+  }
+
+  @keyframes glow-mobile {
+    0% {
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7), 0 0 5px rgba(255, 204, 0, 0.7);
+    }
+    50% {
+      text-shadow: 0 3px 15px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 204, 0, 0.9);
+    }
+    100% {
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.7), 0 0 5px rgba(255, 204, 0, 0.7);
+    }
   }
 }
-
 
 
 /* Footer Section Styles */
