@@ -838,7 +838,32 @@ body {
     }
   }
 }
+.team-members {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
 
+.team-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-card img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
 /* Footer Section Styles */
 .footer-section {
